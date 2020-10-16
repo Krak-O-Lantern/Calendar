@@ -20,7 +20,7 @@ app.get('/availability/:listing_id', (req, res) => {
   const id = Number(req.params.listing_id);
   Listing.findOne({ listing_id: id })
     .then((data) => res.send(data))
-    .catch((err) => res.send(err));
+    .catch((err) => res.send(404, err));
 });
 
 app.listen(PORT, () => {

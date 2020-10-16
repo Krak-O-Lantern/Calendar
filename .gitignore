@@ -33,3 +33,6 @@ node_modules/
 
 # bundle.js doc here for merging
 bundle.js
+
+# database seed
+reservations1.csv
