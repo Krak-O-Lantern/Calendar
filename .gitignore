@@ -35,4 +35,5 @@ node_modules/
 bundle.js
 
 # database seed
-reservations1.csv
+reservations.csv
+reservations.jsonl
