@@ -7,7 +7,7 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "start": "node database-mongodb/seed.js && node server/index.js",
+    "start": "nodemon server/index.js",
     "build": "webpack",
     "watch": "webpack -w",
     "test": "jest --coverage",
@@ -27,6 +27,7 @@
     ]
   },
   "dependencies": {
+    "arangojs": "^5.8.0",
     "axios": "^0.20.0",
     "bluebird": "^3.7.2",
     "body-parser": "^1.19.0",
@@ -34,6 +35,7 @@
     "express": "^4.17.1",
     "faker": "^5.1.0",
     "mongoose": "^5.10.7",
+    "newrelic": "^6.13.2",
     "path": "^0.12.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

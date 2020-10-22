@@ -36,4 +36,8 @@ bundle.js
 
 # database seed
 reservations.csv
+
 reservations.jsonl
+
+# credentials
+cred.js
