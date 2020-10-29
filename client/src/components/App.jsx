@@ -26,9 +26,9 @@ function App() {
   useEffect(() => {
     const listing = window.location.href.match(/listings\/(.+)/);
     const listingId = listing ? listing[1] : 1;
-    axios.get(`/api/listings/${listingId}`)
+    axios.get(`/api/availability/${listingId}`)
       // eslint-disable-next-line no-console
-      .then((response) => { console.log(response.data); setListingData(response.data); })
+      .then((response) => setListingData(response.data))
       // eslint-disable-next-line no-console
       .catch((err) => console.log(err));
   }, []);

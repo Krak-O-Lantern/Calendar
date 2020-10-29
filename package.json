@@ -62,7 +62,7 @@
     "eslint-plugin-react": "^7.21.2",
     "eslint-plugin-react-hooks": "^4.1.2",
     "jest": "^26.4.2",
-    "nodemon": "^2.0.4",
+    "nodemon": "^2.0.6",
     "style-loader": "^1.2.1",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"

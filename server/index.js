@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
 const path = require('path');
 const express = require('express');
-const compression = require('compression');
-const bodyParser = require('body-parser');
+// const compression = require('compression');
+// const bodyParser = require('body-parser');
 const Arango = require('arangojs').Database;
 const { username, password } = require('../cred.js');
 require('newrelic');
@@ -29,12 +29,12 @@ db.listCollections().then((res) => {
 // const { Listing } = require('../database-mongodb/index');
 
 const app = express();
-app.use(compression());
+// app.use(compression());
 
 const PORT = 3001;
 // const PUBLIC_DIR = path.join(__dirname, '/../public');
 
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
 app.use('/listings/:listing_id', express.static(path.join(__dirname, '/../public')));
 
 app.get('/api/listings/:listing_id', (req, res) => {
