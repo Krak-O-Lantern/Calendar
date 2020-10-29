@@ -1,6 +1,14 @@
 /* eslint-disable no-console */
 const mongoose = require('mongoose');
 
+const mongoURI = 'mongodb://localhost/availability';
+
+const db = mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('Connected to mongoDB and mongoose'))
+  .catch((err) => console.log(err));
+
+mongoose.Promise = global.Promise;
+
 // subdocument child schema for availability dates (by month)
 const monthSchema = new mongoose.Schema({
   name: String,
@@ -31,4 +39,4 @@ const listingSchema = new mongoose.Schema({
 
 const Listing = mongoose.model('Listing', listingSchema);
 
-module.exports = { Listing, Month };
+module.exports = { db, Listing, Month };

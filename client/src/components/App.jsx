@@ -21,15 +21,17 @@ function App() {
   const [adjPrice, setAdjPrice] = useState(0);
   const [showCalModal, setCalModal] = useState(false);
   const [listingData, setListingData] = useState(exampleData);
-  const listingID = 11;
 
   // GET request for Listing Data
   useEffect(() => {
-    axios.get(`/availability/${listingID}`)
+    const listing = window.location.href.match(/listings\/(.+)/);
+    const listingId = listing ? listing[1] : 1;
+    axios.get(`/api/availability/${listingId}`)
+      // eslint-disable-next-line no-console
       .then((response) => setListingData(response.data))
       // eslint-disable-next-line no-console
       .catch((err) => console.log(err));
-  }, [listingID]);
+  }, []);
 
   const [checkOut, setCheckOut] = useState('');
   const [checkIn, setCheckIn] = useState('');
